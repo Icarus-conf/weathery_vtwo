@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:geolocator/geolocator.dart';
-import 'package:weathery_vtwo/forecast_bloc/forecast_bloc.dart';
-import 'package:weathery_vtwo/weather_bloc/weather_bloc.dart';
+import 'package:weathery_vtwo/blocs/forecast_bloc/forecast_bloc.dart';
+import 'package:weathery_vtwo/blocs/weather_bloc/weather_bloc.dart';
 import 'package:weathery_vtwo/views/home/home_view.dart';
 import 'package:weathery_vtwo/services/location.dart';
 

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:intl/intl.dart';
 import 'package:lottie/lottie.dart';
-import 'package:weathery_vtwo/forecast_bloc/forecast_bloc.dart';
+import 'package:weathery_vtwo/blocs/forecast_bloc/forecast_bloc.dart';
 import 'package:weathery_vtwo/services/weather_icon_method.dart';
 
 class ForecastWidget extends StatelessWidget {

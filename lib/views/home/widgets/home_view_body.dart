@@ -7,7 +7,7 @@ import 'package:lottie/lottie.dart';
 
 import 'package:weathery_vtwo/services/weather_icon_method.dart';
 import 'package:weathery_vtwo/views/home/widgets/forecast_widget.dart';
-import 'package:weathery_vtwo/weather_bloc/weather_bloc.dart';
+import 'package:weathery_vtwo/blocs/weather_bloc/weather_bloc.dart';
 
 class HomeViewBody extends StatelessWidget {
   const HomeViewBody({super.key});
