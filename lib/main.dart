@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:geolocator/geolocator.dart';
-import 'package:weathery_vtwo/bloc/weather_bloc.dart';
+import 'package:weathery_vtwo/forecast_bloc/forecast_bloc.dart';
+import 'package:weathery_vtwo/weather_bloc/weather_bloc.dart';
 import 'package:weathery_vtwo/views/home/home_view.dart';
 import 'package:weathery_vtwo/services/location.dart';
 
@@ -21,9 +22,17 @@ class MyApp extends StatelessWidget {
         future: LocationPerm.getLocation(),
         builder: (context, snapshot) {
           if (snapshot.hasData) {
-            return BlocProvider(
-              create: (context) =>
-                  WeatherBloc()..add(FetchWeather(snapshot.data as Position)),
+            return MultiBlocProvider(
+              providers: [
+                BlocProvider(
+                  create: (context) => WeatherBloc()
+                    ..add(FetchWeather(snapshot.data as Position)),
+                ),
+                BlocProvider(
+                  create: (context) => ForecastBloc()
+                    ..add(FetchForecast(snapshot.data as Position)),
+                )
+              ],
               child: const HomePage(),
             );
           } else {

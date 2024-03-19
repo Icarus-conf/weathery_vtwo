@@ -1,9 +1,13 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
+
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:intl/intl.dart';
 import 'package:lottie/lottie.dart';
-import 'package:weathery_vtwo/bloc/weather_bloc.dart';
+
+import 'package:weathery_vtwo/services/weather_icon_method.dart';
+import 'package:weathery_vtwo/views/home/widgets/forecast_widget.dart';
+import 'package:weathery_vtwo/weather_bloc/weather_bloc.dart';
 
 class HomeViewBody extends StatelessWidget {
   const HomeViewBody({super.key});
@@ -136,9 +140,6 @@ class HomeViewBody extends StatelessWidget {
                               fontWeight: FontWeight.w300,
                             ),
                           ),
-                        ),
-                        const SizedBox(
-                          height: 50,
                         ),
                         const Spacer(),
                         Padding(
@@ -302,7 +303,7 @@ class HomeViewBody extends StatelessWidget {
                             ],
                           ),
                         ),
-                        const Spacer(),
+                        const ForecastWidget(),
                       ],
                     ),
                   );
@@ -315,25 +316,5 @@ class HomeViewBody extends StatelessWidget {
         ),
       ),
     );
-  }
-
-  String getWeatherIcon(int condition) {
-    if (condition < 300) {
-      return 'assets/lottie/thunder.json';
-    } else if (condition < 400) {
-      return 'assets/lottie/rainy.json';
-    } else if (condition < 600) {
-      return 'assets/lottie/rainy.json';
-    } else if (condition < 700) {
-      return 'assets/lottie/snowy.json';
-    } else if (condition < 800) {
-      return 'assets/lottie/storm.json';
-    } else if (condition == 800) {
-      return 'assets/lottie/sunny.json';
-    } else if (condition <= 804) {
-      return 'assets/lottie/cloudy.json';
-    } else {
-      return '🤷‍';
-    }
   }
 }

@@ -17,7 +17,7 @@ class HomePage extends StatelessWidget {
           statusBarBrightness: Brightness.dark,
         ),
       ),
-      body: const HomeViewBody(),
+      body: HomeViewBody(),
     );
   }
 }
